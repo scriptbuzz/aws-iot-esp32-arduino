@@ -8,8 +8,6 @@
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 
-#define MQTTT_PUB_TOPIC "mbx-iot/from_device"
-#define MQTT_SUB_TOPIC "mbx-iot/to_device"
 #define LED_PIN 13
 
 WiFiClientSecure iot = WiFiClientSecure();
