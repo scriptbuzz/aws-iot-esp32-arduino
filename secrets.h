@@ -27,6 +27,8 @@ insert your device private key here
 )KEY";
 
 // Insert Amazon Root CA 1
+// https://docs.aws.amazon.com/iot/latest/developerguide/server-authentication.html#server-authentication-certs
+  
 static const char AWS_CA[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
 MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
