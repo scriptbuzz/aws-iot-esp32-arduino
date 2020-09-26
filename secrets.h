@@ -1,6 +1,8 @@
 #include <pgmspace.h>
 
 #define AWS_THINGNAME "yourThingName"
+
+// https://docs.aws.amazon.com/iot/latest/developerguide/topics.html
 #define MQTTT_PUB_TOPIC "yourPublishTopic"
 #define MQTT_SUB_TOPIC "yourSubscribeTopic"
 
