@@ -1,5 +1,5 @@
 
-// updated: 9/25/2020 by MBX
+// updated: 9/26/2020 by MBX
 #include "secrets.h"
 #include <WiFiClientSecure.h>
 #include <MQTTClient.h>
@@ -68,15 +68,14 @@ void connectToAWSIoT() // connect to AWS IoT
   Serial.print("\nAWS IoT Endpoint:  ");
   Serial.println(AWS_ENDPOINT);
   Serial.println("\n");
-
 }
 
 
 void publishPayload() // format json payload then publish to MQTT topic
 {
   StaticJsonDocument<200> doc;
-  doc["time"] = timeClient.getFormattedTime(); // get current NPT time
-  doc["sensor01"] = hallRead(); // read ESP32 built-in hall sensor
+  doc["time"] = timeClient.getEpochTime(); // get current NPT time/date in epoch format
+  doc["sensor01"] = hallRead(); // read ESP32 built-in hall effect sensor
   char jsonBuffer[512];
 
   serializeJson(doc, jsonBuffer);
@@ -103,6 +102,7 @@ void setup() {
   connectToWiFi();
   connectToAWSIoT();
   timeClient.begin();
+
 }
 
 
@@ -111,4 +111,5 @@ void loop() {
   publishPayload(); // publish  payload to MQTT topic
   client.loop();
   delay(1000);
+
 }
