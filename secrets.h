@@ -1,6 +1,9 @@
 #include <pgmspace.h>
 
 #define AWS_THINGNAME "yourThingName"
+#define MQTTT_PUB_TOPIC "yourPublishTopic"
+#define MQTT_SUB_TOPIC "yourSubscribeTopic"
+
 const char WIFI_SSID[] = "YourSSID";
 const char WIFI_PASSWORD[] = "YourSSIDpassword";
 const char AWS_ENDPOINT[] = "YourAWSIoTEndpoint-ats.iot.us-east-1.amazonaws.com";
