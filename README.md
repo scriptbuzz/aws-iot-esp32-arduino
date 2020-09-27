@@ -4,14 +4,9 @@
 
 The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings to the AWS cloud and accepts commands over the internet from the AWS cloud. 
 
-The ESP32 comes in many flavors and models. For this solution, I have the HUZZAH 32, which is an ESP32-WROOM-32 module from Adafruit. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use generic ESP32 development boards from Amazon which cost under $10. 
+The ESP32 comes in many flavors and models. For this solution, I have the HUZZAH 32, which is an ESP32-WROOM-32 module from Adafruit. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use generic ESP32 development boards from Amazon for about $10. 
 
 The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13.
- From the cloud, IoT Rules store the sensor reading in a DynamoDB, stream it to Kinesis
-
-**Development Environment Setting**
-
-NOTE: Update the program global variables to reflect your AWS resource names. 
 
 **Prerequisites**
 * AWS Account
@@ -56,9 +51,19 @@ NOTE: Update the program global variables to reflect your AWS resource names.
 * Now that you have the IoT certificates, endpoint, Thing Name, you are ready to update the microcontroller firmware. 
 
 
-**Microcontroller Development Workstation Configuration**
-* Install the Arduino IDE on your development workstation. 
+**Arduino Development Workstation Configuration**
+* Download and install the Arduino IDE on your development workstation. 
 * Install USB drivers to support your ESP32 microcontroller.
+* Launhc the Arduino IDE and open the Preferences window.
+* In Additional Board Manager URLs, add
+  * https://dl.espressif.com/dl/package_esp32_index.json.
+* Select Tools > Board > Boards Manager. Search esp32 (by Espressif Systems) and install the latest version.
+* Select Tools > Board > ESP32 Arduino > ESP32 Dev Module
+ 
+  * Choose Sketch > Include Library >> Manage Libraries.
+  * Search and install ArduinoJson.
+  * Search and install NTPClient
+
 * Update the Arduino IDE to support the ESP32 development board. https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md
 * From the Board Manager, Update Arduino IDE Boards to include ESP32
 * Update Arduino IDE Libraries to support ESP32 
