@@ -11,12 +11,9 @@ The ESP32 has many built in sensors. I will be using the built-in hall effect se
 **Prerequisites**
 * AWS Account
 * Create an AWS IoT Thing
-* Install the Arduino IDE and USB drivers
-* ESP32 microcontroller development board. I am using the Adafruit HUZZAH32 but you can use other models so long as you find a compatible board setting in the Arduino IDE Board Manager. 
-* Sensors and/or actuators, if you wish send messages and commands back and forth between AWS IoT and the ESP32 to read sensor values and control pins on the ESP32 via MQTT. I am using the ESP32's built in hall effects sensor to pass those readings to AWS IoT. I am also using the ESP32's built in LED to send commands from the cloud via MQTT to the ESP32. You can use your own sensors and control devices and attach then to the ESP32.
-* ESP32 firmware to be updated then uploaded/flashed
-  * The C++ firmware code file: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/mbx-iot-esp32.ino
-  * The associated secrets.h file: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/secrets.h
+* Install the Arduino IDE and USB-serial driver for your computer and esp32. Consult the esp32 vendor to determmine which driver.
+* Attach sensors and/or actuators to your esp32.  I am using the ESP32's built in hall effect sensor. I am also using the ESP32's built-in programable LED to send commands from the cloud via MQTT to the ESP32 to turn the LED on/off. You can use your own sensors and control devices and attach them to the ESP32.
+* Plug your ESP32 microcontroller development board to your workstation. I am using the Adafruit HUZZAH32 but you can use other models so long as you find a compatible board setting in the Arduino IDE Board Manager. 
 
 **AWS Configuration**
 
