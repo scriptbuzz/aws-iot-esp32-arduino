@@ -60,8 +60,12 @@ NOTE: Update the program global variables to reflect your AWS resource names.
 **Microcontroller Development Workstation Configuration**
 * Install the Arduino IDE on your development workstation. 
 * Install USB drivers to support your ESP32 microcontroller.
+* Update the Arduino IDE to support the ESP32 development board. https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md
 * From the Board Manager, Update Arduino IDE Boards to include ESP32
 * Update Arduino IDE Libraries to support ESP32 
+  * ArduinoJSON: Builds JSON payloads https://github.com/arduino-libraries/Arduino_JSON
+  * ArduinoMQTT: Lightweight MQTT library for the Arduino IDE https://github.com/256dpi/arduino-mqtt
+  * NTPClient: Connect to an NTP server to obtain real time readings https://github.com/arduino-libraries/NTPClient
 * Update the Arduino secrets.h code with your WiFi and AWS IoT info you gathered from the previous steps including
   * WiFi ssid/password
   * AWS IoT certificates
