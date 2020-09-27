@@ -50,11 +50,11 @@ The ESP32 has many built in sensors. I will be using the built-in hall effect se
 * Select Register Thing.
 * Now that you have the IoT certificates, endpoint, Thing Name, you are ready to update the microcontroller firmware. 
 
-
 **Arduino Development Workstation Configuration**
-* Download and install the Arduino IDE on your development workstation.
-* Install the USB-serial drivers to support your ESP32 microcontroller.
-* Launch the Arduino IDE and open the Preferences window.
+
+* Download and install the Arduino IDE on your development workstation
+* Install the USB-serial drivers to support your ESP32 microcontroller
+* Launch the Arduino IDE and open the Preferences window
 * In Additional Board Manager URLs, add https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 * Select Tools > Board > Boards Manager. Search esp32 (by Espressif Systems) and install the latest version.
 * Select Tools > Board > ESP32 Arduino > ESP32 Dev Module
@@ -63,7 +63,6 @@ The ESP32 has many built in sensors. I will be using the built-in hall effect se
   * Search and install NTPClient by Fabrice Weinberg
   * Search and install arduino-mqtt by Joel Gaehwiler
   * If for whetever reason you can't find any of the libraries, you can always go to their github repo (see References section below), downlowd the zip file, then select Sketch > Include Library > Add .ZIP file.
-
 * Update the Arduino secrets.h code with your WiFi and AWS IoT info you gathered from the previous steps including
   * WiFi ssid/password
   * AWS IoT certificates
