@@ -8,6 +8,8 @@ The ESP32 comes in many flavors and models. For this solution, I have the Adafru
 
 The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
 
+![esp32 to aws iot ](./assets/mbx-aws-iot-esp32.jpg)
+
 **Prerequisites**
 * AWS Account
 * Create an AWS IoT Thing
