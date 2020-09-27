@@ -182,12 +182,8 @@ void loop() {
 
 }
 ```
-* Update the Arduino secrets.h code with your WiFi and AWS IoT info you gathered from the previous steps including
-  * WiFi ssid/password
-  * AWS IoT certificates
-  * AWS IoT Endpoint
-  * AWS IoT Thing name
-* Update the MQTTT_PUB_TOPIC and MQTTT_SUB_TOPIC topics with your own desired topics. 
+* Create a new Tab in your sketch and name it secrets.h
+* Paste the code below into secrets.h
 ```cpp
 #include <pgmspace.h>
 
@@ -243,6 +239,12 @@ rqXRfboQnoZsG4q5WTP468SQvvG5
 -----END CERTIFICATE-----
 )EOF";
 ```
+* Update the Arduino secrets.h code with your WiFi and AWS IoT info you gathered from the previous steps including
+  * WiFi ssid/password
+  * AWS IoT certificates
+  * AWS IoT Endpoint
+  * AWS IoT Thing name
+* Update the MQTTT_PUB_TOPIC and MQTTT_SUB_TOPIC topics with your own desired topics. 
 * Connect your ESP32 development board to your computer
 * Upload/Flash your ESP32 with the updated code (firmware)
 * Open the Arduino IDE Serial Monitor and set the speed to match your code settings
