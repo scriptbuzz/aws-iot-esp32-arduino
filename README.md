@@ -6,7 +6,9 @@ The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT
 
 The ESP32 comes in many flavors and models. For this solution, I have the Adafruit HUZZAH32, which is based on the popular WROOM32 variant. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board from Amazon which cab be purchased for about $10. https://www.amazon.com/dp/B0718T232Z/ref=cm_sw_em_r_mt_dp_6TmCFbES7SMYB
 
-The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
+The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. 
+
+This is Part I of a series of IoT solutions. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
 
 ![esp32 to aws iot ](./assets/mbx-aws-iot-esp32.jpg)
 
