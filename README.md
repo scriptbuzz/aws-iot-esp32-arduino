@@ -86,3 +86,12 @@ NOTE: Update the program global variables to reflect your AWS resource names.
 **Solution Summary**
 
 This solution establishes publish/subscribe connectivity between an ESP32 microcontroller and AWS IoT to read sensor values from the ESP32 and to send commands to the ESP32.  With this foundational solution, you can now apply IoT Rules to store sensor readings, take action on sensor values, visualize sensor data, perform advances analytics, feed machine learning models, and more. 
+
+**References**
+* ESP32 https://www.espressif.com/en/products/socs/esp32
+* Arduino IDE https://www.arduino.cc/en/main/software
+* Arduino Packages and Libraries
+  * ArduinoJSON: Builds JSON payloads https://github.com/arduino-libraries/Arduino_JSON
+  * ArduinoMQTT: Lightweight MQTT library for the Arduino IDE https://github.com/256dpi/arduino-mqtt
+  * NTPClient: Connect to an NTP server to obtain real time readings https://github.com/arduino-libraries/NTPClient
+
