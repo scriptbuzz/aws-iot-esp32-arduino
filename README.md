@@ -6,7 +6,7 @@ The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT
 
 The ESP32 comes in many flavors and models. For this solution, I have the HUZZAH 32, which is an ESP32-WROOM-32 module from Adafruit. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use generic ESP32 development boards from Amazon for about $10. 
 
-The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13.
+The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
 
 **Prerequisites**
 * AWS Account
@@ -52,24 +52,18 @@ The ESP32 has many built in sensors. I will be using the built-in hall effect se
 
 
 **Arduino Development Workstation Configuration**
-* Download and install the Arduino IDE on your development workstation. 
-* Install USB drivers to support your ESP32 microcontroller.
-* Launhc the Arduino IDE and open the Preferences window.
-* In Additional Board Manager URLs, add
-  * https://dl.espressif.com/dl/package_esp32_index.json.
+* Download and install the Arduino IDE on your development workstation.
+* Install the USB-serial drivers to support your ESP32 microcontroller.
+* Launch the Arduino IDE and open the Preferences window.
+* In Additional Board Manager URLs, add https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 * Select Tools > Board > Boards Manager. Search esp32 (by Espressif Systems) and install the latest version.
 * Select Tools > Board > ESP32 Arduino > ESP32 Dev Module
- 
-  * Choose Sketch > Include Library >> Manage Libraries.
-  * Search and install ArduinoJson.
-  * Search and install NTPClient
+* Choose Sketch > Include Library > Manage Libraries.
+  * Search and install ArduinoJson by Benoit Blanchon
+  * Search and install NTPClient by Fabrice Weinberg
+  * Search and install arduino-mqtt by Joel Gaehwiler
+  * If for whetever reason you can't find any of the libraries, you can always go to their github repo (see References section below), downlowd the zip file, then select Sketch > Include Library > Add .ZIP file.
 
-* Update the Arduino IDE to support the ESP32 development board. https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md
-* From the Board Manager, Update Arduino IDE Boards to include ESP32
-* Update Arduino IDE Libraries to support ESP32 
-  * ArduinoJSON: Builds JSON payloads https://github.com/arduino-libraries/Arduino_JSON
-  * ArduinoMQTT: Lightweight MQTT library for the Arduino IDE https://github.com/256dpi/arduino-mqtt
-  * NTPClient: Connect to an NTP server to obtain real time readings https://github.com/arduino-libraries/NTPClient
 * Update the Arduino secrets.h code with your WiFi and AWS IoT info you gathered from the previous steps including
   * WiFi ssid/password
   * AWS IoT certificates
