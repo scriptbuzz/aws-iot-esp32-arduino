@@ -98,4 +98,5 @@ This solution establishes publish/subscribe connectivity between an ESP32 microc
   * ArduinoJSON: Builds JSON payloads https://github.com/arduino-libraries/Arduino_JSON
   * ArduinoMQTT: Lightweight MQTT library for the Arduino IDE https://github.com/256dpi/arduino-mqtt
   * NTPClient: Connect to an NTP server to obtain real time readings https://github.com/arduino-libraries/NTPClient
+* AWS IoT https://aws.amazon.com/iot/
 
