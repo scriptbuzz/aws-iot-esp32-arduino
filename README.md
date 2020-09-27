@@ -1,5 +1,14 @@
 # aws-iot-esp32-arduino
 
+**Overview of Solution**
+
+The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings to the AWS cloud and accepts commands over the internet from the AWS cloud. 
+
+The ESP32 comes in many flavors and models. For this solution, I have the HUZZAH 32, which is an ESP32-WROOM-32 module from Adafruit. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use generic ESP32 development boards from Amazon which cost under $10. 
+
+The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13.
+ From the cloud, IoT Rules store the sensor reading in a DynamoDB, stream it to Kinesis
+
 **Development Environment Setting**
 
 NOTE: Update the program global variables to reflect your AWS resource names. 
