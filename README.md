@@ -4,7 +4,7 @@
 
 The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings to the AWS cloud and accepts commands over the internet from the AWS cloud. 
 
-The ESP32 comes in many flavors and models. For this solution, I have the Adafruit HUZZAH32, which is based on the popular WROOM32 variant. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board from Amazon which cab be purchased for about $10. https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/ref=sr_1_5?dchild=1&keywords=ESP32&qid=1601227557&sr=8-5
+The ESP32 comes in many flavors and models. For this solution, I have the Adafruit HUZZAH32, which is based on the popular WROOM32 variant. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board from Amazon which cab be purchased for about $10. https://www.amazon.com/dp/B0718T232Z/ref=cm_sw_em_r_mt_dp_6TmCFbES7SMYB
 
 The ESP32 has many built in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
 
