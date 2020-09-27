@@ -17,7 +17,7 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 **Prerequisites**
 * AWS Account
 * Create an AWS IoT Thing
-* Install the Arduino IDE and USB-serial driver for your computer and esp32. Consult the esp32 vendor to determmine which driver.
+* Install the Arduino IDE and USB-serial driver for your computer and esp32. Consult the esp32 vendor docs to determmine which driver is needed.
 * Attach sensors and/or actuators to your esp32.  I am using the ESP32's built in hall effect sensor. I am also using the ESP32's built-in programable LED to send commands from the cloud via MQTT to the ESP32 to turn the LED on/off. You can use your own sensors and control devices and attach them to the ESP32.
 * Plug your ESP32 microcontroller development board to your workstation. I am using the Adafruit HUZZAH32 but you can use other models so long as you find a compatible board setting in the Arduino IDE Board Manager. 
 
@@ -25,12 +25,12 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 
 * Sign in to the https://console.aws.amazon.com/iot/
 * Browse to the AWS IoT Core console
-* From the left navigation pane, select Settings
-* In Custom endpoint, make a note of the endpoint value. The endpoint should have this format “xxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com”, in my case, the AWS region is us-east-1, but feel free to change to your region of choice.  Your microcontroller will need this endpoint to communicate with AWS IoT. 
-* From the left navigation pane, select Secure > Policies > Create.
-* If you do not have any IoT policy created, select Create a policy.
+* From the left navigation pane, select **Settings**
+* Next to **Custom** endpoint, make a note of the endpoint value. The endpoint should have this format **“xxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com”**, in my case, the AWS region is us-east-1, but feel free to change to your region of choice.  Your microcontroller firmware will be updated with this endpoint value to communicate with AWS IoT. 
+* From the left navigation pane, select **Secure > Policies > Create**
+* If you do not have any IoT policy created, select **Create a policy**
 * Enter a name for your policy. Example: "esp32_iot_policy"
-* In the Add statements section, select Advanced mode. Copy and paste the following JSON into the policy editor window. This policy is too broad. Please spend some time to trim down this policy based on best practices. 
+* In the Add statements section, select **Advanced mode**. Copy and paste the following JSON into the policy editor window. This policy is too broad. Please trim down this policy's permissions based on best practices. 
 ```json
 {
   "Version": "2012-10-17",
@@ -44,13 +44,13 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 }
 ```
 * Choose Create.
-* From the left navigation pane, select Manage > Things > Create > Create a single thing. 
-* Enter a name for your Thing > Next. You will need this name for your microcontroller firmware.
-* From the Add a certificate for your thing panel > Create certificate.
-* Download all four certificates: certificate for this thing, the public key, and the private key, and the root CA for AWS IoT. You will need the content of those files for the microcontroller to communicate securely over the internet with AWS IoT. 
-* Select Activate
-* Select Attach Policy. Select the policy that you have created from the previous steps. 
-* Select Register Thing.
+* From the left navigation pane, select **Manage > Things > Create > Create a single thing** 
+* Enter a name for your Thing and click  **Next**. This name will also be needed for the microcontroller firmware.
+* From the **Add a certificate for your thing** panel **Create certificate**
+* Download all four certificates: certificate for this thing, the public key, and the private key, and the root CA for AWS IoT. You will need the content of those files for the microcontroller firmware to communicate securely over the internet with AWS IoT. 
+* Select **Activate**
+* Select **Attach Policy**. Select the policy that you have created from the previous steps. 
+* Select **Register Thing**
 * Now that you have the IoT certificates, endpoint, Thing Name, you are ready to update the microcontroller firmware. 
 
 **Arduino Development Workstation Configuration**
