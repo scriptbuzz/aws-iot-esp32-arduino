@@ -12,8 +12,8 @@ NOTE: Update the program global variables to reflect your AWS resource names.
 * ESP32 microcontroller development board. I am using the Adafruit HUZZAH32 but you can use other models so long as you find a compatible board setting in the Arduino IDE Board Manager. 
 * Sensors and/or actuators, if you wish send messages and commands back and forth between AWS IoT and the ESP32 to read sensor values and control pins on the ESP32 via MQTT. I am using the ESP32's built in hall effects sensor to pass those readings to AWS IoT. I am also using the ESP32's built in LED to send commands from the cloud via MQTT to the ESP32. 
 * ESP32 firmware to be updated then uploaded/flashed
-  * This is the main C++ code: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/secrets.h
-  * This is the secrets.h file: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/secrets.h
+  * The C++ firmware code file: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/mbx-iot-esp32.ino
+  * The associated secrets.h file: https://github.com/scriptbuzz/aws-iot-esp32-arduino/blob/master/secrets.h
 
 **AWS Configuration**
 
