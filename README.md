@@ -61,7 +61,7 @@ NOTE: Update the program global variables to reflect your AWS resource names.
 * Open the Arduino IDE Serial Monitor and set the speed to match your code settings
 * From the Serial Monitor output, ensure WiFi and AWS connectivity is established.
 
-Testing MQTT Connectivity
+**Testing MQTT Connectivity**
 * Sign in to the https://console.aws.amazon.com/iot/
 * Browse to the AWS IoT Core console
 * Open the Test panel, from the left. Select Subscribe to a topic.
