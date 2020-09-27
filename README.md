@@ -97,4 +97,8 @@ This solution establishes publish/subscribe connectivity between an ESP32 microc
   * ArduinoMQTT: Lightweight MQTT library for the Arduino IDE https://github.com/256dpi/arduino-mqtt
   * NTPClient: Connect to an NTP server to obtain real time readings https://github.com/arduino-libraries/NTPClient
 * AWS IoT https://aws.amazon.com/iot/
+* Moheeb Zara's AWS IoT guide https://aws.amazon.com/blogs/compute/building-an-aws-iot-core-device-using-aws-serverless-and-an-esp32/
+* Gourav Das's Cloud Home Automation guide https://hackernoon.com/cloud-home-automation-series-part-1-connect-esp32-to-aws-iot-with-arduino-code-lkhp36vx
+* Mudassar Tamboli's guide https://medium.com/@mudassar.tamboli/esp32-aws-iot-and-secured-wifi-leds-e9dc9d2d70b3
+
 
