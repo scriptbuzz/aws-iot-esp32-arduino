@@ -1,24 +1,23 @@
-# aws-iot-esp32-arduino
+# aws-iot-esp32-arduino (draft)
 
 **Overview of Solution**
 
-The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings to the AWS cloud and accepts commands to turn an lED on/off over the internet from the AWS cloud. 
+The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings with a date/time stamp from an NTP server to the AWS cloud, and accepts commands to turn an LED on/off, over the internet from the AWS cloud. 
 
 ![esp32](./assets/esp32-devkitc-functional-overview.jpg)
 
-The ESP32 comes in many flavors and models. For this solution, I have the Adafruit HUZZAH32, which is based on the popular WROOM32 variant. It has USB-to-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board from Amazon which cab be purchased for about $10. https://www.amazon.com/dp/B0718T232Z/ref=cm_sw_em_r_mt_dp_6TmCFbES7SMYB
+The ESP32 is sold under different names and variety of models. For this solution, I have the Adafruit HUZZAH32, based on the popular WROOM32 variant. It has USB-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board from Amazon which cab be purchased for about $10 as long as it's supported by your firmware development toolchain. 
 
-The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor as well as the built-in programmable LED wired to GPIO 13. 
+The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor to transmit sensor values as well as the built-in programmable LED wired to GPIO 13 to turn on/off based on remote commands. 
 
-This is Part I of a series of IoT solutions. This solution assumes some knowledge of the Arduino IDE development tool and the ESP32. 
+This is Part I of a series of IoT solutions. This solution assumes some knowledge of the Arduino IDE development tool, the ESP32, and the AWS ecosystem.  
 
 ![esp32 to aws iot ](./assets/mbx-aws-iot-esp32.jpg)
 
 **Prerequisites**
-* AWS Account
-* Create an AWS IoT Thing
-* Install the Arduino IDE and USB-serial driver for your computer and esp32. Consult the esp32 vendor docs to determmine which driver is needed.
-* Attach sensors and/or actuators to your esp32.  I am using the ESP32's built in hall effect sensor. I am also using the ESP32's built-in programable LED to send commands from the cloud via MQTT to the ESP32 to turn the LED on/off. You can use your own sensors and control devices and attach them to the ESP32.
+* AWS Account to create an AWS IoT Thing
+* Install the Arduino IDE and USB-serial driver for your computer and ESP32. Consult the ESP32 vendor docs to determmine which driver is needed for your model.
+* Attach sensors and/or actuators to your ESP32.  I am using the ESP32's built in hall effect sensor. I am also using the ESP32's built-in programable LED to send commands from the cloud via MQTT to the ESP32 to turn the LED on/off. You can use your own sensors and control devices and attach them to the ESP32.
 * Plug your ESP32 microcontroller development board to your workstation. I am using the Adafruit HUZZAH32 but you can use other models so long as you find a compatible board setting in the Arduino IDE Board Manager. 
 
 **AWS Configuration**
