@@ -8,7 +8,7 @@ The ESP32 is sold under different names and variety of models. For this solution
 
 ![esp32](./assets/esp32-devkitc-functional-overview.jpg)
 
-The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor to transmit sensor values as well as the built-in programmable LED wired to GPIO 13 to turn on/off based on remote commands. 
+The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor to transmit sensor values as well as the built-in programmable LED wired to GPIO 13 to turn on/off based on remote commands. Since most ESP32 modules do not have a realtime clock, I am connecting to NTP servers so I can include datetime stamps with sensor readings, for logging and analytics. 
 
 This is Part I of a series of IoT solutions. This solution assumes some knowledge of the Arduino IDE development tool, the ESP32, and the AWS ecosystem.  
 
