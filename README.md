@@ -64,6 +64,9 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 
 * Select Tools > Board > Boards Manager. Search esp32 (by Espressif Systems) and install the latest version.
 * Select Tools > Board > ESP32 Arduino > ESP32 Dev Module
+
+<img src="./assets/mbx-arduino-add-esp32-board-package.jpg" width="800" title="esp32 arduino board setting">
+
 * Choose Sketch > Include Library > Manage Libraries.
   * Search and install ArduinoJson by Benoit Blanchon
   * Search and install NTPClient by Fabrice Weinberg
