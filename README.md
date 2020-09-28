@@ -59,6 +59,9 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 * Install the USB-serial drivers to support your ESP32 microcontroller
 * Launch the Arduino IDE and open the Preferences window
 * In Additional Board Manager URLs, add https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+<img src="./assets/mbx-arduino-add-board-json-setting.jpg" width="800" title="esp32 arduino board setting">
+
 * Select Tools > Board > Boards Manager. Search esp32 (by Espressif Systems) and install the latest version.
 * Select Tools > Board > ESP32 Arduino > ESP32 Dev Module
 * Choose Sketch > Include Library > Manage Libraries.
