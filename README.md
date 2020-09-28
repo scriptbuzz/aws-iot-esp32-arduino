@@ -4,7 +4,7 @@
 
 The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings with a date/time stamp from an NTP server to the AWS cloud, and accepts commands to turn an LED on/off, over the internet from the AWS cloud. To view how the completed solution functions, please view this video of the final integration: https://youtu.be/6Ir94C9GlVk
 
-The ESP32 is sold under different names and variety of models. For this solution, I have the Adafruit HUZZAH32, based on the popular WROOM32 variant. It has USB-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board, many of which can can be purchased for less than $10 from Amazon, as long as it's supported by your firmware development toolchain. 
+The ESP32 is sold under different names and variety of models. For this solution, I have the Adafruit HUZZAH32, based on the popular WROOM32 variant. It has USB-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board, many of which can can be purchased for less than $10 from Amazon, as long as your model is supported by your firmware development toolchain. 
 
 ![esp32](./assets/esp32-devkitc-functional-overview.jpg)
 
