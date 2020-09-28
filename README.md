@@ -69,9 +69,18 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 
 * Choose Sketch > Include Library > Manage Libraries.
   * Search and install ArduinoJson by Benoit Blanchon
+  
+  <img src="./assets/mbx-arduino-arduinoJson-library.jpg" width="800" title="esp32 arduino board setting">
+ 
   * Search and install NTPClient by Fabrice Weinberg
+  
+  <img src="./assets/mbx-arduino-ntp-client-library.jpg" width="800" title="esp32 arduino board setting">
+  
   * Search and install arduino-mqtt by Joel Gaehwiler
   * If for whetever reason you can't find any of the libraries, you can always go to their github repo (see References section below), downlowd the zip file, then select Sketch > Include Library > Add .ZIP file.
+  
+  <img src="./assets/mbx-arduino-add-zip-library.jpg" width="800" title="esp32 arduino board setting">
+  
 * Create a new Arduino sketch: File > New
 * Paste below code into the blank sketch:
 ```cpp
