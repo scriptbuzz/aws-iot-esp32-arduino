@@ -1,14 +1,14 @@
-# aws-iot-esp32-arduino (draft)
+# aws-iot-esp32-arduino 
 
 **Overview of Solution**
 
 The ESP32 and ESP8266 microcontrollers by Espressif sit at the heart of many IoT devices in smart home appliances and controllers. In this solution, I will prototype an ESP32-based IoT network that transmits sensor readings with a date/time stamp from an NTP server to the AWS cloud, and accepts commands to turn an LED on/off, over the internet from the AWS cloud. To view how the completed solution functions, please view this video of the final integration: https://youtu.be/6Ir94C9GlVk
 
-The ESP32 is sold under different names and variety of models. For this solution, I have the Adafruit HUZZAH32, based on the popular WROOM32 variant. It has USB-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board, many of which can can be purchased for less than $10 from Amazon, as long as your model is supported by your firmware development toolchain. 
+The ESP32 is sold under different names and variety of models. For this solution, I am using the Adafruit HUZZAH32, based on the popular WROOM32 variant. It has USB-Serial converter, automatic bootloader reset, lipo battery input and charger. But you can use any generic ESP32 development board, many of which can can be purchased for less than $10 from Amazon, as long as your model is supported by your firmware development toolchain. 
 
 ![esp32](./assets/esp32-devkitc-functional-overview.jpg)
 
-The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor to transmit sensor values as well as the built-in programmable LED wired to GPIO 13 to turn on/off based on remote commands. Since most ESP32 modules do not have a realtime clock, I am connecting to NTP servers so I can include datetime stamps with sensor readings, for logging and analytics. 
+The ESP32 has many built-in sensors. I will be using the built-in hall effect sensor to transmit sensor values, as well as use the built-in programmable LED, wired to GPIO 13, to turn on/off with commands from AWS IoT. Since most ESP32 modules do not have a realtime clock, I am connecting to an internet NTP timeservers so I can include datetime stamps with sensor readings, for logging and analytics. 
 
 This is Part I of a series of IoT solutions. This solution assumes some knowledge of the Arduino IDE development tool, the ESP32, and the AWS ecosystem.  
 
@@ -25,7 +25,7 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 * Sign in to the https://console.aws.amazon.com/iot/
 * Browse to the AWS IoT Core console
 * From the left navigation pane, select **Settings**
-* Next to **Custom** endpoint, make a note of the endpoint value. The endpoint should have this format **“xxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com”**, in my case, the AWS region is us-east-1, but feel free to change to your region of choice.  Your microcontroller firmware will be updated with this endpoint value to communicate with AWS IoT. 
+* Next to **Custom** endpoint, save the endpoint value. The endpoint should have this format **“xxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com”** In my case, the AWS region is us-east-1, but your region could be different.  
 * From the left navigation pane, select **Secure > Policies > Create**
 * If you do not have any IoT policy created, select **Create a policy**
 * Enter a name for your policy. Example: "esp32_iot_policy"
@@ -50,7 +50,7 @@ This is Part I of a series of IoT solutions. This solution assumes some knowledg
 * Select **Activate**
 * Select **Attach Policy**. Select the policy that you have created from the previous steps. 
 * Select **Register Thing**
-* Now that you have the IoT certificates, endpoint, Thing Name, you are ready to update the microcontroller firmware. 
+* Now that you have the IoT certificates, AWS IoT endpoint, Thing Name, you are ready to update the microcontroller firmware. 
 
 **Arduino Development Workstation Configuration**
 
@@ -279,7 +279,7 @@ rqXRfboQnoZsG4q5WTP468SQvvG5
 
 **Solution Summary**
 
-This solution establishes publish/subscribe connectivity between an ESP32 microcontroller and AWS IoT to read sensor values from the ESP32 and to send commands to the ESP32.  With this foundational solution, you can now apply IoT Rules to store sensor readings, take action on sensor values, visualize sensor data, perform advances analytics, feed machine learning models, and more. 
+This solution establishes publish/subscribe connectivity between an ESP32 microcontroller (Adafruit HUZZAH32) and AWS IoT to read sensor values from the ESP32, along with a datetime stamp from an internet NTP timeservers, and to send commands to the ESP32.  With this foundational solution, you can now apply IoT Rules to store sensor readings, take action on sensor values, visualize sensor data, perform advances analytics, feed machine learning models, and more. 
 
 **References**
 * ESP32 https://www.espressif.com/en/products/socs/esp32
